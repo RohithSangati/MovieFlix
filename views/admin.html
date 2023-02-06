@@ -8,7 +8,12 @@
   <title>MovieFlix</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <!--For datatable-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="//cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+  
+  
   <!--Theatre vendors accept & reject-->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -737,6 +742,83 @@
 
       </div>
     </section>
+    <section>
+
+      <script>
+        /*
+        $(document).ready(function () {
+                $.get("https://reqres.in/api/users?page=2",(data, status)=>{
+                    res=data.data
+                    $("#theatreList").dataTable({
+                        data:res,
+                    
+                        columns:[
+                            {"mData":"id"},
+                            {"mData":"theatre_name"},
+                            {"mData":"location"},
+                            {"mData":"category"},
+                            {"mData":"owner_email"},
+                            {"mData":"img"}
+                    ]
+                    })
+                })
+    });*/
+    
+        $(document).ready(function(){
+            $("#theatreList").dataTable()
+        })
+    
+    </script>
+      <table id="theatreList" class="display" style="width:100%">
+          <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Theatre Name</th>
+                  <th>Location</th>
+                  <th>Owner_Email</th>
+                  <th>Category</th>
+                  <th>Theatre Image</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>1</td>
+                <td>PVR Cinemas</td>
+                <td>Hyderabad</td>
+                <td>pvrhyd@gmail.com</td>
+                <td>A</td>
+                <td>../img/hostels/theatre1.jpg</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>PVR Cinemas</td>
+              <td>Hyderabad</td>
+              <td>pvrhyd@gmail.com</td>
+              <td>A</td>
+              <td>../img/hostels/theatre1.jpg</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>PVR Cinemas</td>
+            <td>Hyderabad</td>
+            <td>pvrhyd@gmail.com</td>
+            <td>A</td>
+            <td>../img/hostels/theatre1.jpg</td>
+        </tr>
+            </tbody>
+          <tfoot>
+              <tr>
+                <th>Id</th>
+                <th>Theatre Name</th>
+                <th>Location</th>
+                <th>Owner_Email</th>
+                <th>Category</th>
+                <th>Theatre Image</th>
+              </tr>
+          </tfoot>
+      </table>
+    </section>
+
 
   </main>
   <aside id="sidebar" class="sidebar" style="color: black;">
