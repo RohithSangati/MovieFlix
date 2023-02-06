@@ -154,6 +154,38 @@
 				</div>	
 			</section>
 			<!-- End contact-page Area -->
+			<section>
+				<script>
+					$(document).ready(function() {
+  					$("#theatreRegister").click(function() {
+    				$("#form1").toggle();
+  						});
+					});
+				</script>
+				<div class="col-lg-12">
+					<div class="alert-msg" style="text-align: left;"></div>
+					<button class="genric-btn primary" style="float: right;" id="theatreRegister">Register your theatre here!</button>											
+				</div>
+				<div class="col-lg-8" id="form1" style="align-items: center;">
+					<div class="form-area contact-form text-right">
+						<div class="row">	
+							<div class="col-lg-6 form-group">
+								<input name="name" placeholder="Enter your theatre name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text" id="theatre_name">
+							
+								<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" id="owner_id" class="common-input mb-20 form-control" required="" type="email">
+
+								<input name="location" placeholder="Enter your theatre location" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text" id="theatre_location">
+
+								<input name="img" placeholder="Enter your img_url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text" id="theatre_img">
+							</div>
+							<div class="col-lg-12" style="left: -80%;">
+								<div class="alert-msg" style="text-align: left;"></div>
+								<button class="genric-btn primary" style="float: right;" id="submitTheatre">Register!</button>											
+							</div>
+						</div>
+					</div>	
+				</div>
+			</section>
 
 			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">

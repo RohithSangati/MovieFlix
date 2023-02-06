@@ -730,7 +730,82 @@
                 
                 </div>
                 </div>
+                <section>
 
+                  <script>
+                    /*
+                    $(document).ready(function () {
+                            $.get("https://reqres.in/api/users?page=2",(data, status)=>{
+                                res=data.data
+                                $("#theatreList").dataTable({
+                                    data:res,
+                                
+                                    columns:[
+                                        {"mData":"id"},
+                                        {"mData":"theatre_name"},
+                                        {"mData":"location"},
+                                        {"mData":"category"},
+                                        {"mData":"owner_email"},
+                                        {"mData":"img"}
+                                ]
+                                })
+                            })
+                });*/
+                
+                    $(document).ready(function(){
+                        $("#theatreList").dataTable()
+                    })
+                
+                </script>
+                  <table id="theatreList" class="display" style="width:100%">
+                      <thead>
+                          <tr>
+                              <th>Id</th>
+                              <th>Theatre Name</th>
+                              <th>Location</th>
+                              <th>Owner_Email</th>
+                              <th>Category</th>
+                              <th>Theatre Image</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>PVR Cinemas</td>
+                            <td>Hyderabad</td>
+                            <td>pvrhyd@gmail.com</td>
+                            <td>A</td>
+                            <td>../img/hostels/theatre1.jpg</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>PVR Cinemas</td>
+                          <td>Hyderabad</td>
+                          <td>pvrhyd@gmail.com</td>
+                          <td>A</td>
+                          <td>../img/hostels/theatre1.jpg</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>PVR Cinemas</td>
+                        <td>Hyderabad</td>
+                        <td>pvrhyd@gmail.com</td>
+                        <td>A</td>
+                        <td>../img/hostels/theatre1.jpg</td>
+                    </tr>
+                        </tbody>
+                      <tfoot>
+                          <tr>
+                            <th>Id</th>
+                            <th>Theatre Name</th>
+                            <th>Location</th>
+                            <th>Owner_Email</th>
+                            <th>Category</th>
+                            <th>Theatre Image</th>
+                          </tr>
+                      </tfoot>
+                  </table>
+                </section>
               </div><!--Add theatres end-->
             </div>
 
@@ -742,82 +817,7 @@
 
       </div>
     </section>
-    <section>
-
-      <script>
-        /*
-        $(document).ready(function () {
-                $.get("https://reqres.in/api/users?page=2",(data, status)=>{
-                    res=data.data
-                    $("#theatreList").dataTable({
-                        data:res,
-                    
-                        columns:[
-                            {"mData":"id"},
-                            {"mData":"theatre_name"},
-                            {"mData":"location"},
-                            {"mData":"category"},
-                            {"mData":"owner_email"},
-                            {"mData":"img"}
-                    ]
-                    })
-                })
-    });*/
-    
-        $(document).ready(function(){
-            $("#theatreList").dataTable()
-        })
-    
-    </script>
-      <table id="theatreList" class="display" style="width:100%">
-          <thead>
-              <tr>
-                  <th>Id</th>
-                  <th>Theatre Name</th>
-                  <th>Location</th>
-                  <th>Owner_Email</th>
-                  <th>Category</th>
-                  <th>Theatre Image</th>
-              </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>1</td>
-                <td>PVR Cinemas</td>
-                <td>Hyderabad</td>
-                <td>pvrhyd@gmail.com</td>
-                <td>A</td>
-                <td>../img/hostels/theatre1.jpg</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>PVR Cinemas</td>
-              <td>Hyderabad</td>
-              <td>pvrhyd@gmail.com</td>
-              <td>A</td>
-              <td>../img/hostels/theatre1.jpg</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>PVR Cinemas</td>
-            <td>Hyderabad</td>
-            <td>pvrhyd@gmail.com</td>
-            <td>A</td>
-            <td>../img/hostels/theatre1.jpg</td>
-        </tr>
-            </tbody>
-          <tfoot>
-              <tr>
-                <th>Id</th>
-                <th>Theatre Name</th>
-                <th>Location</th>
-                <th>Owner_Email</th>
-                <th>Category</th>
-                <th>Theatre Image</th>
-              </tr>
-          </tfoot>
-      </table>
-    </section>
+   
 
 
   </main>
