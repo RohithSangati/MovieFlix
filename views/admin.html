@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MovieFlix</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="mycss/admin.css">    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">MovieFlixAdmin</span>
+      </a>
+    </div>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  
+
+  <main id="main" class="main">
+
+    <!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row" >
+
+            <!-- Sales Card -->
+            <div class="col-xxl-3 col-md-6" id="users-btn" onclick="displayUsers()" style="cursor: pointer;">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Users List</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="countOfusers">0</h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Users</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-3 col-md-6" id="movies-btn" onclick="displayMovies()" style="cursor: pointer;">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Movies</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-camera-video"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="countOfPlaces">0</h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Movies</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <div class="col-xxl-3 col-md-6" id="theatres-btn" onclick="displayTheatres()" style="cursor: pointer;">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Theatres</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-film"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="countOfPlaces">0</h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Places</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-3 col-md-6" id="queries-btn" onclick="displayqueries()" style="cursor: pointer;">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Enquiries</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-question-circle"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 id="countOfQuiries">0</h6>
+                      <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">Enquiries</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            
+           
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                
+                <div class="card-body" style="display:visible;" id="usersData">
+
+                  <table class="table table-borderless datatable" id="userdata">
+                    
+                      <tr style="background-color: rgb(205, 201, 201);">
+                        <th scope="col">Id </th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                      </tr>
+                    
+                  </table>
+
+                </div>
+
+                
+
+                <div class="card-body">
+
+                  <table class="table table-borderless datatable" id="enquiries"  style="display:none">
+                    
+                      <tr style="background-color: rgb(205, 201, 201);">
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Message</th>
+                      </tr>
+                    
+                    
+                  </table>
+
+                </div>
+
+                
+
+
+                <div class="card-body" id="addMoviesData" style="display: none;">
+                  <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-evenly;margin: auto;border: 2px solid white;border-radius: 20px;background-color: rgb(205, 201, 201);padding-top:20px;flex-wrap:wrap ;padding-bottom: 20px;">
+        
+                      <div style="display: flex;flex-direction:column;justify-content: center;align-items: center;flex-basis: 420px;">
+                          <input type="text" id="addMovieName" placeholder="Movie Name"  required><br>
+                          <input type="text" id="addMovieId" placeholder="Movie Id"  required><br>
+                          <input type="text" id="addMovieImUrl" placeholder="Movie Image url" required><br>
+                          <input type="text" id="addMovieCoverImUrl" placeholder="Movie Cover Image url" required><br>
+                          <input type="text" id="addMovieDuration" placeholder="Duration In Minutes" required><br>    
+                          <textarea rows="5" cols="33" id="addMovieDescription" placeholder="Description" required></textarea>                      
+                      </div>
+                      <div style="display: flex;flex-direction:column;justify-content: center;align-items: center;flex-basis: 420px;">
+                        <select name="Select Categories" id="addMovieCategory">
+                          <option value="null">Select Category</option>
+                          <option value="Action">Action</option>
+                          <option value="Adventure">Adventure</option>
+                          <option value="Comedy">Comedy</option>
+                          <option value="Drama">Drama</option>
+                          <option value="Horror">Horror</option>
+                          <option value="Mystery">Mystery</option>
+                          <option value="Sports">Sports</option>
+                          <option value="Romance">Romance</option>
+                          <option value="Thriller">Thriller</option>
+                        </select><br> 
+                        <select name="Select Language" id="addMovieLang">
+                          <option value="null">Select Language</option>
+                          <option value="English">English</option>
+                          <option value="Hindi">Hindhi</option>
+                          <option value="Telugu">Telugu</option>
+                          <option value="Tamil">Tamil</option>
+                          <option value="Kannada">Kannada</option>
+                          <option value="Malayalam">Malayalam</option>
+                        </select><br>    
+                        <select name="Select Format" id="addMovieFormat">
+                          <option value="null">Select Format</option>
+                          <option value="2d">2D</option>
+                          <option value="3d">3D</option>
+                          <option value="4dx">4DX</option>
+                        </select><br>    
+                        <div style="background-color: white;display: flex;flex-direction: column;justify-content: center;align-items: center;padding:6px;border-radius: 20px;">
+                          <select name="Select Theatre" id="addTheatreSelect" style="width: 97%;">
+                            <option value="null1">Select Theatre</option>
+                            <option value="Theatre1">Theatre1</option>
+                            <option value="Theatre2">Theatre2</option>
+                            <option value="Theatre3">Theatre3</option>
+                          </select><br>  
+                          <input type="number" placeholder="Price" id="theatrePrice" style="width: 97%;">
+                          <div style="display: flex;flex-direction: row;justify-content: space-between;align-items: flex-end;padding: 10px;">
+                            <div style="display:flex;flex-direction:column;align-items:center;">
+                              <label>StartDate</label>
+                              <input type="date" id="theatreStartDate" placeholder="Start Date" style="width:97%;">
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;">
+                              <label>EndDate</label>
+                              <input type="date" id="theatreEndDate" placeholder="End Date" style="width:97%;">
+                            </div>
+                          </div>
+                          <div style="cursor:pointer;background-color:black;color:white;border:2px solid white;text-align: center;padding:10px;border-radius:30px;" id="theatreSaveAndAddBtn">Save theatre & Add another</div>
+                        </div>         
+                    </div>  
+                  </div> 
+                  <div style="display:flex;justify-content: center;">
+                    <div id="addMovieBtn" style="cursor:pointer;width:20%;background-color:black;color:white;border:2px solid white;text-align: center;padding:15px;border-radius:30px;">Add Movie</div>  
+                  </div>           
+                </div>
+
+                <div class="card-body" id="addTheatresData" style="display: none;">
+                  <div style="display: flex;flex-direction:row;align-items:center;justify-content:space-evenly;margin: auto;border: 2px solid white;border-radius: 20px;background-color: rgb(205, 201, 201);padding-top:20px;flex-wrap:wrap ;padding-bottom: 20px;">
+        
+                    <div style="display: flex;flex-direction:column;justify-content: center;align-items: center;flex-basis: 420px;">
+                      <input type="text" id="addTheatreImUrl" placeholder="Theatre Image" required><br>
+                      <input type="text" id="addTheatreName" placeholder="Theatre Name"  required><br>
+                      <input type="text" id="addTheatreLocation" placeholder="Theatre Location"  required><br>
+                      <input type="text" id="addTheatreId" placeholder="Theatre Id" required>
+                    </div>
+                    <div style="display: flex;flex-direction:column;justify-content: center;align-items: center;flex-basis: 420px;">
+                         
+                      <div style="background-color: white;display: flex;flex-direction: column;justify-content: center;align-items: center;padding:6px;border-radius: 20px;">
+                        <select name="Select Movie" id="addMovieSelect" style="width: 97%;">
+                          <option value="null">Select Movie</option>
+                          <option value="Movie1">Movie1</option>
+                          <option value="Movie2">Movie2</option>
+                          <option value="Movie3">Movie3</option>
+                        </select><br>  
+                        <input type="number" placeholder="Price" style="width: 97%;" id="moviePrice">
+                        <div style="display: flex;flex-direction: row;justify-content: space-between;align-items: flex-end;padding: 10px;">
+                          <div style="display:flex;flex-direction:column;align-items:center;">
+                            <label>StartDate</label>
+                            <input type="date" placeholder="Start Date" style="width:97%; " id="movieStartDate">
+                          </div>
+                          <div style="display:flex;flex-direction:column;align-items:center;">
+                            <label>EndDate</label>
+                            <input type="date" placeholder="End Date" style="width:97%;" id="movieEndDate">
+                          </div>
+                        </div>
+                        <div style="cursor:pointer;background-color:black;color:white;border:2px solid white;text-align: center;padding:10px;border-radius:30px;" id="MovieSaveAndAddBtn">Save Movie & Add another</div>
+                      </div>         
+                  </div>  
+                </div> 
+                <div style="display:flex;justify-content: center;">
+                  <div id="addTheatreBtn" style="cursor:pointer;width:20%;background-color:black;color:white;border:2px solid white;text-align: center;padding:15px;border-radius:30px;">Add Theatre</div>  
+                </div>                
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+  </main>
+  <aside id="sidebar" class="sidebar" style="color: black;">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <div class="pagetitle">
+        <h1  style="color: black;">Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb"  style="color: black;">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html" style="color: black;">
+          <i class="bi bi-grid" style="color: black;"></i>
+          <span >Home</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item" style="cursor: pointer;color: black;">
+        <a class="nav-link "onclick="displayUsers()">
+          <i class="bi bi-grid" style="color: black;"></i>
+          <span style="color: black;">Users List</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item" style="cursor: pointer;">
+        <a class="nav-link " onclick="displayMovies()">
+          <i class="bi bi-grid" style="color: black;"></i>
+          <span style="color: black;">Add Movie</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item" style="cursor: pointer;">
+        <a class="nav-link " onclick="displayTheatres()">
+          <i class="bi bi-grid" style="color: black;"></i>
+          <span style="color: black;">Add Theatre</span>
+        </a>
+      </li>
+      <li class="nav-item" style="cursor: pointer;">
+        <a class="nav-link " onclick="displayqueries()">
+          <i class="bi bi-grid" style="color: black;"></i>
+          <span style="color: black;">Enquiries</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      
+    </ul>
+
+  </aside><!-- End Sidebar-->  
+
+  <script src="assets/js/main.js"></script>
+  <script src="myjs/admin.js"></script>
+
+</body>
+
+</html>
